@@ -1,5 +1,24 @@
 from pywinauto.application import Application
 import time
+"""
+run.py
+
+This script automates data entry into the Crystal PM application using the pywinauto library.
+It connects to the running Crystal PM window, locates specific input fields by their automation IDs,
+and enters predefined values (such as payment amount and last 4 digits of a card).
+If the automation IDs are incorrect or controls are not found, it prints the control identifiers
+to help the user adjust the script.
+
+Usage:
+- Ensure Crystal PM is running and visible.
+- Adjust the auto_id values if necessary by inspecting the control identifiers.
+- Run this script to automate filling in payment information.
+
+Dependencies:
+- pywinauto
+- pywin32
+"""
+
 
 # --- Step 1: Connect to your application ---
 try:
