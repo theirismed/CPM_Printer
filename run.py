@@ -37,10 +37,14 @@ try:
     print("Targeting input fields by their auto_id...")
 
     # Find the Amount field and enter text
-    # amount_input = main_win.child_window(auto_id="textAmount", control_type="Edit")
     amount_input = main_win.child_window(auto_id="txtPayCreditAmount", control_type="Edit")
     amount_input.set_text("250.00")
     print("   Set Amount to '250.00'")
+
+    # Find the Type field and enter the text for type
+    type_combo_input = main_win.child_window(auto_id="1001", control_type="Edit")
+    type_combo_input.set_text("VISA")
+    print("   Set Type to 'VISA'")
 
     # Find the Last4 field and enter text
     last4_input = main_win.child_window(auto_id="textLast4", control_type="Edit")
@@ -48,9 +52,9 @@ try:
     print("   Set Last4 to '1234'")
     
     # # Find the Memo field and enter text
-    # memo_input = main_win.child_window(auto_id="textMemo", control_type="Edit")
-    # memo_input.set_text("Patient co-payment")
-    # print("   Set Memo to 'Patient co-payment'")
+    memo_input = main_win.child_window(auto_id="txtPayCreditMemo", control_type="Edit")
+    memo_input.set_text("Patient co-payment")
+    print("   Set Memo to 'Patient co-payment'")
 
 except Exception as e:
     print("Error: Could not find one of the input fields.")
@@ -59,4 +63,5 @@ except Exception as e:
     print(f"   Details: {e}")
 
     # For Debugging: If it fails, run this again to get the complete list of controls
+
     main_win.print_control_identifiers()
